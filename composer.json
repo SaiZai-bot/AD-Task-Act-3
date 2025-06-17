@@ -1,0 +1,16 @@
+{
+    "name": "saizai-bot/ad-task-act-3",
+    "type": "project",
+    "authors": [
+        {
+            "name": "SaiZai-bot",
+            "email": "202310159@fit.edu.ph"
+        }
+    ],
+    "scripts": {
+        "start": "php -S localhost:8000 router.php"
+    },
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
