@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'saizai-bot/ad-task-act-3',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => null,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '157c2afbec48e9f514f652264777dd47387ba04a',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -29,9 +29,9 @@
             'dev_requirement' => false,
         ),
         'saizai-bot/ad-task-act-3' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => null,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '157c2afbec48e9f514f652264777dd47387ba04a',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

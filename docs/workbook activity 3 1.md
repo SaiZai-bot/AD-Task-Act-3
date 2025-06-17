@@ -68,10 +68,10 @@ composer require vlucas/phpdotenv
 ## 6. Modifying `.env`: Update `.env`
 Make sure important informations are hidden and tucked . as in testing of for the checker they should be changed from hard codded to env based
 
-- [ ] Fill all the following data
+- [x] Fill all the following data
 > Restart the docker after this. both `docker compose watch` and `docker compose up`
-- [ ] Change the hard coded of checkers to env based
-- [ ] Create a `envSetter.util.php` code distributing all the env
+- [x] Change the hard coded of checkers to env based
+- [x] Create a `envSetter.util.php` code distributing all the env
 > add the following code before distributing it to a variable
 ```php
 <?php
@@ -84,7 +84,7 @@ $typeConfig = [
     'key' => $_ENV['ENV_NAME'],
 ];
 ```
-- [ ] Update `mongodbChecker.handler.php` and `postgreChecker.handler.php`
+- [x] Update `mongodbChecker.handler.php` and `postgreChecker.handler.php`
     All working:
     ```html
     ✅ Connected to MongoDB successfully.
@@ -99,33 +99,33 @@ $typeConfig = [
 
 ## 7. Using Tools: Connecting Database to UI Database Manager
 Using `Database` a tool at the tool tab manage and view your database
-- [ ] Make Sure the Database is working. Go to Docker Desktop and make sure the `image` of `postgre` is green.
-- [ ] In `Database` click `Create Connection`
-- [ ] Select `PostgreSQL`
-- [ ] Setup connection: Port, Username, Password and Database
+- [x] Make Sure the Database is working. Go to Docker Desktop and make sure the `image` of `postgre` is green.
+- [x] In `Database` click `Create Connection`
+- [x] Select `PostgreSQL`
+- [x] Setup connection: Port, Username, Password and Database
 > can be view the data in `compose.yaml`
-- [ ] Click Connect and should show: `Connection Success!` then `Save`
+- [x] Click Connect and should show: `Connection Success!` then `Save`
 
 ## 8. Design Database: Creating Database formula preparation for automation
 Using the GUI of database you need to formulate your data structure on how you will handle datas of your system.
 in this demo we need to have a design for our users
 Task: Users can be divided into group, they can login, basic information and role.
 
-- [ ] Design a structure
-- [ ] Create Base Pattern using the tool by simple selecting the database from `Database`
-    - [ ] Select your <database name> ex.: `mydatabase`
-    - [ ] Select `Tables` and look for the `+` sign then click it
-    - [ ] Create Sample code then copy
-    - [ ] Goto your `Explorer`
-    - [ ] Create new file for that specific model ex.: `user.model.sql`
-    - [ ] Add conditional command on your SQL code
-        - [ ] between `CREATE TABLE` and `<table name>` add the following code `IF NOT EXISTS`
+- [x] Design a structure
+- [x] Create Base Pattern using the tool by simple selecting the database from `Database`
+    - [x] Select your <database name> ex.: `mydatabase`
+    - [x] Select `Tables` and look for the `+` sign then click it
+    - [x] Create Sample code then copy
+    - [x] Goto your `Explorer`
+    - [x] Create new file for that specific model ex.: `user.model.sql`
+    - [x] Add conditional command on your SQL code
+        - [x] between `CREATE TABLE` and `<table name>` add the following code `IF NOT EXISTS`
 
 Task:
 Create more tables for the following
-- [ ] Projects
-- [ ] Project ↔ User assignments (project_user)
-- [ ] Tasks
+- [x] Projects
+- [x] Project ↔ User assignments (project_user)
+- [x] Tasks
 
 Just Copy the following for the `project_users.model.sql`
 ```sql
@@ -149,9 +149,9 @@ In this step we will design an automation that resets the database when needed a
 - Process: Automatically Create
 - Output: Create the Tables Ready for Use
 
-- [ ] Creating a new util code `dbResetPostgresql.util.php`
+- [x] Creating a new util code `dbResetPostgresql.util.php`
 
-- [ ] Setting up requirements
+- [x] Setting up requirements
 > Just copy this
 ```php
 declare(strict_types=1);
@@ -166,7 +166,7 @@ require 'bootstrap.php';
 require_once UTILS_PATH . '/envSetter.util.php';
 ```
 
-- [ ] Adding the database host and connecting
+- [x] Adding the database host and connecting
 ```php
 // ——— Connect to PostgreSQL ———
 $dsn = "pgsql:host={$pgConfig['host']};port={$pgConfig['port']};dbname={$pgConfig['db']}";
