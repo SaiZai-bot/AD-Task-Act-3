@@ -2,7 +2,7 @@ FROM php:8.3.21-fpm-alpine3.20
 
 ENV NODE_ENV=development
 
-RUN addgroup -S developer && adduser -S yourUsernameHere -G developer
+RUN addgroup -S developer && adduser -S SaiZai-bot -G developer
 
 WORKDIR /var/www/html
 
@@ -15,10 +15,10 @@ COPY --from=composer:2.6 /usr/bin/composer /usr/local/bin/composer
 
 COPY . /var/www/html/
 
-USER yourUsernameHere
+RUN composer install
+
+USER SaiZai-bot
 
 EXPOSE 8000
-
-RUN composer install
 
 CMD ["php", "-S", "0.0.0.0:8000", "router.php"]

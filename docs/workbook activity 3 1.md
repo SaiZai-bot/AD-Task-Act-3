@@ -5,14 +5,14 @@
 - MongoDB
 
 ## 1. Modifying Documentation: Update Readme
-- [ ] Check all the TODO Tasks
-- [ ] Delete `TODO` mark when done modifying
+- [x] Check all the TODO Tasks
+- [x] Delete `TODO` mark when done modifying
 
 ## 2. Modifying Composer: Update `composer.json`
 Change the following:
-- [ ] your-username-here
-- [ ] project-name-here
-- [ ] add author/s
+- [x] your-username-here
+- [x] project-name-here
+- [x] add author/s
 ```json
 "authors": [
     {
@@ -28,20 +28,20 @@ Change the following:
 
 ## 3. Modifying Docker: Update `compose.yml`
 Change the following:
-- [ ] Change all `web-app-php`.
+- [x] Change all `web-app-php`.
 > Using `ctrl` + `shift` + `D`, each press in `D` will select another similar text and its not case sensetive.
-- [ ] Update Database names: `MONGO_INITDB_DATABASE` & `POSTGRES_DB`
-- [ ] (Optional) Can Change External ports <External Port>:<Internal Port> ex.: "27017:27017" -> "23567:27017"
+- [x] Update Database names: `MONGO_INITDB_DATABASE` & `POSTGRES_DB`
+- [x] (Optional) Can Change External ports <External Port>:<Internal Port> ex.: "27017:27017" -> "23567:27017"
 
 ## 4. Update the Checker
-- [ ] `mongodbChecker.handler.php`
-    - [ ] change the `27017` with your updated port with internal/external port
+- [x] `mongodbChecker.handler.php`
+    - [x] change the `27017` with your updated port with internal/external port
     > $mongo = `new MongoDB\Driver\Manager("mongodb://host.docker.internal:27017");` -> `$mongo = new MongoDB\Driver\Manager("mongodb://host.docker.internal:23567");`
-- [ ] `postgreChecker.handler.php`
-    - [ ] change the `5112` with your updated port with internal/external port
+- [x] `postgreChecker.handler.php`
+    - [x] change the `5112` with your updated port with internal/external port
     > `$port = "5112";` -> `$port = "5555";`
-- [ ] Spin up the project: in terminal use the command: `docker compose up` and in new cmd is `docker compose watch`
-- [ ] Add the checker in any pages and wait for either of the 2:
+- [x] Spin up the project: in terminal use the command: `docker compose up` and in new cmd is `docker compose watch`
+- [x] Add the checker in any pages and wait for either of the 2:
     All working: 
     ```html
     ✅ Connected to MongoDB successfully.
