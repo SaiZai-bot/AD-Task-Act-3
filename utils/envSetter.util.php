@@ -11,18 +11,16 @@ $dotenv = Dotenv\Dotenv::createImmutable(BASE_PATH);
 $dotenv->load();
 
 // Distribute the data using array keys
-$typeConfig = [
+return [
     'mongo' => [
         'uri' => $_ENV['MONGO_URI'],
-        'db' => $_ENV['MONGO_DB'],
+        'db'  => $_ENV['MONGO_DB'],
     ],
     'postgres' => [
-        'host' => $_ENV['POSTGRES_HOST'],
-        'port' => $_ENV['POSTGRES_PORT'], // <- ADD THIS
-        'db' => $_ENV['POSTGRES_DB'],
-        'user' => $_ENV['POSTGRES_USER'],
+        'host'     => $_ENV['POSTGRES_HOST'],
+        'port'     => $_ENV['POSTGRES_PORT'],
+        'db'       => $_ENV['POSTGRES_DB'],
+        'user'     => $_ENV['POSTGRES_USER'],
         'password' => $_ENV['POSTGRES_PASSWORD'],
     ],
 ];
-
-return $typeConfig;

@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
 
 require 'vendor/autoload.php';
-require 'bootstrap.php';
 define('UTILS_PATH', __DIR__);
-require_once UTILS_PATH . '/envSetter.util.php';
 
+// Load the environment config
+$typeConfig = require_once UTILS_PATH . '/envSetter.util.php';
 $pgConfig = $typeConfig['postgres'];
 
 // Connect to PostgreSQL
@@ -15,12 +15,12 @@ $pdo = new PDO($dsn, $pgConfig['user'], $pgConfig['password'], [
 
 echo "✅ Connected to PostgreSQL\n";
 
-// Step 1: Apply all schema files
+
 $sqlFiles = [
     'database/user.model.sql',
-    'database/project.model.sql',
-    'database/project_users.model.sql',
-    'database/task.model.sql', // or 'tasks.model.sql' if you rename the file
+    'database/meeting.model.sql',
+    'database/meeting_users.model.sql',
+    'database/task.model.sql'
 ];
 
 foreach ($sqlFiles as $file) {
@@ -35,8 +35,7 @@ foreach ($sqlFiles as $file) {
     echo "✅ Success from {$file}\n";
 }
 
-// Step 2: Truncate all tables in correct order (dependencies last)
 echo "🚮 Truncating tables…\n";
-foreach (['project_users', 'tasks', 'projects', 'users'] as $table) {
+foreach (['meeting_users', 'meeting', 'tasks', 'users'] as $table) {
     $pdo->exec("TRUNCATE TABLE {$table} RESTART IDENTITY CASCADE;");
 }

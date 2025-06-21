@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS projects (
+CREATE TABLE IF NOT EXISTS meeting (
     id SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     description TEXT,
