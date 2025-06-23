@@ -2,7 +2,7 @@
 function footer() {
     ?>
         <footer class="container footer">
-            <p>&copy; <?= date("Y") ?> Paluto App. All rights reserved.</p>
+            <p>&copy; <?= date("Y") ?> Meeting Calendar Website. All rights reserved.</p>
         </footer>
     </body>
     </html>
