@@ -104,6 +104,7 @@ AD-Task-3
 └─ assets
 |   └─ css
 |   |   └─ style.css
+└─ commponents
 |   └─ templates
 |      └─ footer.component.php
 |      └─ header.component.php
