@@ -1,6 +1,5 @@
 CREATE TABLE IF NOT EXISTS meeting_users (
-    meeting_id INTEGER NOT NULL REFERENCES meeting(id),
-    user_id INTEGER NOT NULL REFERENCES users(id),
-    role VARCHAR(50) NOT NULL,
+    meeting_id uuid NOT NULL REFERENCES meeting(id),
+    user_id uuid NOT NULL REFERENCES users(id),
     PRIMARY KEY (meeting_id, user_id)
 );

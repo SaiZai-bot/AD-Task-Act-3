@@ -1,9 +1,10 @@
 <?php
 define('BASE_PATH', realpath(__DIR__));
-define('VENDOR_PATH', BASE_PATH . '/vendor');
-define('HANDLERS_PATH', BASE_PATH . '/handlers');
-define('COMPONENT_PATH', BASE_PATH . '/components');
-define('UTILS_PATH', BASE_PATH . '/utils');
+define('HANDLERS_PATH', realpath(BASE_PATH . "/handlers"));
+define('VENDOR_PATH', realpath(BASE_PATH . "/vendor"));
+define('COMPONENT_PATH', realpath(BASE_PATH . "/components"));
+define('UTILS_PATH', realpath(BASE_PATH . "/utils"));
+define('STATICDATA_PATH', realpath(BASE_PATH . "/staticDatas"));
 
 chdir(BASE_PATH);
 

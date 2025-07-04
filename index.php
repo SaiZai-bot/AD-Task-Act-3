@@ -1,6 +1,5 @@
 <?php
-require_once __DIR__ . '/bootstrap.php';
-
+require_once BASE_PATH . '/vendor/autoload.php';
 require_once COMPONENT_PATH . '/templates/header.component.php';
 require_once COMPONENT_PATH . '/templates/nav.component.php';
 require_once COMPONENT_PATH . '/templates/footer.component.php';

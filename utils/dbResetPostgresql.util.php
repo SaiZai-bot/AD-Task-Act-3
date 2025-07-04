@@ -1,13 +1,14 @@
-<?php declare(strict_types=1);
+<?php 
+declare(strict_types=1);
 
-require 'vendor/autoload.php';
-define('UTILS_PATH', __DIR__);
+require_once 'vendor/autoload.php';
+require_once 'bootstrap.php';
 
-// Load the environment config
+
 $typeConfig = require_once UTILS_PATH . '/envSetter.util.php';
 $pgConfig = $typeConfig['postgres'];
 
-// Connect to PostgreSQL
+
 $dsn = "pgsql:host={$pgConfig['host']};port={$pgConfig['port']};dbname={$pgConfig['db']}";
 $pdo = new PDO($dsn, $pgConfig['user'], $pgConfig['password'], [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -15,6 +16,15 @@ $pdo = new PDO($dsn, $pgConfig['user'], $pgConfig['password'], [
 
 echo "✅ Connected to PostgreSQL\n";
 
+$tables = ['meeting_users', 'tasks', 'meeting', 'users'];
+foreach ($tables as $table) {
+    try {
+        $pdo->exec("DROP TABLE IF EXISTS public.\"{$table}\" CASCADE;");
+        echo "✅ Dropped table: {$table}\n";
+    } catch (PDOException $e) {
+        echo "❌ Failed to drop table {$table}: " . $e->getMessage() . "\n";
+    }
+}
 
 $sqlFiles = [
     'database/user.model.sql',
@@ -24,18 +34,21 @@ $sqlFiles = [
 ];
 
 foreach ($sqlFiles as $file) {
-    echo "📦 Applying schema from {$file}…\n";
+    echo "📦 gaggo. Applying schema from {$file}…\n";
     $sql = file_get_contents($file);
+
+    echo "\n💥 DEBUG: Content of {$file}:\n\n$sql\n\n";
 
     if ($sql === false) {
         throw new RuntimeException("❌ Could not read {$file}");
     }
 
     $pdo->exec($sql);
-    echo "✅ Success from {$file}\n";
+    echo "✅ gagooo Success from {$file}\n";
 }
 
 echo "🚮 Truncating tables…\n";
 foreach (['meeting_users', 'meeting', 'tasks', 'users'] as $table) {
     $pdo->exec("TRUNCATE TABLE {$table} RESTART IDENTITY CASCADE;");
 }
+

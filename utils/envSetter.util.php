@@ -10,7 +10,6 @@ require_once BASE_PATH . '/vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(BASE_PATH);
 $dotenv->load();
 
-// Distribute the data using array keys
 return [
     'mongo' => [
         'uri' => $_ENV['MONGO_URI'],

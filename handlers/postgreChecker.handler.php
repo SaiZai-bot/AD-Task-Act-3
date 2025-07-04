@@ -2,7 +2,7 @@
 $config = require __DIR__ . '/../utils/envSetter.util.php';
 
 $host = $config['postgres']['host'];
-$port = $config['postgres']['port'] ?? '5432'; // Optional: define in .env
+$port = $config['postgres']['port'] ?? '5432';
 $username = $config['postgres']['user'];
 $password = $config['postgres']['password'];
 $dbname = $config['postgres']['db'];
