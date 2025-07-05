@@ -8,7 +8,7 @@ $username = $_POST['username'] ?? '';
 $password = $_POST['password'] ?? '';
 
 if (AuthUtil::login($username, $password)) {
-    header('Location: /index.php?login=success');
+    header('Location: /pages/addmeet/index.php?login=success');
     exit;
 } else {
     $error = urlencode("Invalid username or password");

@@ -21,7 +21,7 @@ nav();
 
 <main class="container">
     <h1>Meetings</h1>
-    <a href="/index.php"> + Add New Meeting</a>
+    <a href="/pages/addmeet/index.php"> + Add New Meeting</a>
     <ul class ="meeting-list">
         <?php foreach ($meetings as $meet): ?>
             <li class ="meeting_item">

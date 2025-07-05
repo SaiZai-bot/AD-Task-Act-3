@@ -5,6 +5,5 @@ require_once '../utils/auth.util.php';
 
 AuthUtil::logout();
 
-// Redirect to login page
-header('Location: /pages/login/index.php?logout=success');
+header('Location: /pages/addmeet/index.php?logout=success');
 exit;

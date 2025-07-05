@@ -1,43 +1,39 @@
 <?php
+declare(strict_types=1);
+
 require_once BASE_PATH . '/vendor/autoload.php';
 require_once COMPONENT_PATH . '/templates/header.component.php';
 require_once COMPONENT_PATH . '/templates/nav.component.php';
 require_once COMPONENT_PATH . '/templates/footer.component.php';
-require_once UTILS_PATH . '/db.util.php';
 
-
-$pdo = connectToPostgres();
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $stmt = $pdo->prepare("INSERT INTO meeting (name, description, created_at) VALUES (?, ?, ?)");
-    $stmt->execute([
-        $_POST['name'],
-        $_POST['description'],
-        $_POST['created_at']
-    ]);
-    header("Location: /index.php"); 
-    exit;
-}
-
-    head();
-    nav();
+head(); 
+nav();
 ?>
 
-<main class="container">
-    <div class="form-box">
-        <form method="POST">
-            <label>Title: <input type="text" name="name" required></label><br><br>
-            <label>Description: <textarea name="description"></textarea></label><br><br>
-            <label>Date: <input type="date" name="created_at" required></label><br><br>
-            <button type="submit">Save Meeting</button>
-        </form>
+<main class="login-container">
+    <section class="login-box">
+        <h2>Login to Your Account</h2>
 
-        <div style="margin-top: 1rem;">
-            <a href="/pages/viewMeet/index.php">← View Meetings</a>
-        </div>
-    </div>
+        <?php if (isset($_GET['logout']) && $_GET['logout'] === 'success'): ?>
+            <div class="success-message">✅ You have been logged out successfully.</div>
+        <?php endif; ?>
+
+        <?php if (isset($_GET['error'])): ?>
+            <div class="error-message"><?= htmlspecialchars($_GET['error']) ?></div>
+        <?php endif; ?>
+
+        <form action="/handlers/auth.handler.php" method="POST">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+    </section>
 </main>
 
 <?php
-footer();
+footer(); 
 ?>
