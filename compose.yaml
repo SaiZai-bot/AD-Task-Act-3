@@ -1,12 +1,12 @@
 services:
-  web-app-php:
+  meeting-service:
     build:
       context: .
-    container_name: web-app-php-service-Act-3
+    container_name: meeting-service-act-3
     ports:
       - "8080:8000"
     volumes:
-      - .:/var/www/html
+      - .:/var/www/htmls
     develop:
       watch:
         - path: .
@@ -22,7 +22,7 @@ services:
 
   mongodb:
     image: mongo:latest
-    container_name: web-app-php-mongodb-Act-3
+    container_name: meeting-mongodb-Act-3
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: rootPassword
@@ -30,11 +30,11 @@ services:
     ports:
       - "27171:27017"
     volumes:
-      - web-app-php-mongodb:/data/db/mongodb
+      - meeting-mongodb:/data/db/mongodb
 
   postgresql:
     image: postgres:15
-    container_name: web-app-php-postgresql-Act-3
+    container_name: meeting-postgresql-Act-3
     restart: always
     environment:
       POSTGRES_USER: user
@@ -43,10 +43,10 @@ services:
     ports:
       - "5121:5432"
     volumes:
-      - web-app-php-postgresql:/data/db/postgresql
+      - meeting-postgresql:/data/db/postgresql
 
 volumes:
-  web-app-php-mongodb:
+  meeting-mongodb:
     driver: local
-  web-app-php-postgresql:
+  meeting-postgresql:
     driver: local

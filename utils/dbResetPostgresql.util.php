@@ -34,7 +34,7 @@ $sqlFiles = [
 ];
 
 foreach ($sqlFiles as $file) {
-    echo "📦 gaggo. Applying schema from {$file}…\n";
+    echo "📦 Applying schema from {$file}…\n";
     $sql = file_get_contents($file);
 
     echo "\n💥 DEBUG: Content of {$file}:\n\n$sql\n\n";
@@ -44,7 +44,7 @@ foreach ($sqlFiles as $file) {
     }
 
     $pdo->exec($sql);
-    echo "✅ gagooo Success from {$file}\n";
+    echo "✅ Success from {$file}\n";
 }
 
 echo "🚮 Truncating tables…\n";
