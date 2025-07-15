@@ -8,12 +8,6 @@ return [
         'created_at' => '2025-07-01 09:00:00',
     ],
     [
-        'id' => 'aaaaaaa2-aaaa-aaaa-aaaa-aaaaaaaaaaaa',
-        'name' => 'Design Review',
-        'description' => 'Review UI designs with team',
-        'created_at' => '2025-07-03 14:30:00',
-    ],
-    [
         'id' => 'aaaaaaa3-aaaa-aaaa-aaaa-aaaaaaaaaaaa',
         'name' => 'Sprint Planning',
         'description' => 'Plan next development sprint',

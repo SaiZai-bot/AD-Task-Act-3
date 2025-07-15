@@ -46,9 +46,3 @@ foreach ($sqlFiles as $file) {
     $pdo->exec($sql);
     echo "✅ Success from {$file}\n";
 }
-
-echo "🚮 Truncating tables…\n";
-foreach (['meeting_users', 'meeting', 'tasks', 'users'] as $table) {
-    $pdo->exec("TRUNCATE TABLE {$table} RESTART IDENTITY CASCADE;");
-}
-

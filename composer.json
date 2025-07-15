@@ -14,6 +14,6 @@
   "postgresql:migrate": "docker compose exec meeting-service php utils/dbMigratePostgresql.util.php"
 },
   "require": {
-    "vlucas/phpdotenv": "*"
+    "vlucas/phpdotenv": "^5.6"
   }
 }

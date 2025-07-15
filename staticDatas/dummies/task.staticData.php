@@ -18,14 +18,6 @@ return [
         'assigned_to' => '1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6a',
     ],
     [
-        'id' => 'bbbbbbb3-bbbb-bbbb-bbbb-bbbbbbbbbbbb',
-        'meeting_id' => 'aaaaaaa2-aaaa-aaaa-aaaa-aaaaaaaaaaaa',
-        'title' => 'Design Wireframes',
-        'description' => 'Draft UI wireframes for the app.',
-        'status' => 'pending',
-        'assigned_to' => '1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d',
-    ],
-    [
         'id' => 'bbbbbbb4-bbbb-bbbb-bbbb-bbbbbbbbbbbb',
         'meeting_id' => 'aaaaaaa3-aaaa-aaaa-aaaa-aaaaaaaaaaaa',
         'title' => 'Gather Feedback',
