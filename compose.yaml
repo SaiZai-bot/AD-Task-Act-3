@@ -6,7 +6,7 @@ services:
     ports:
       - "8080:8000"
     volumes:
-      - .:/var/www/htmls
+      - .:/var/www/html
     develop:
       watch:
         - path: .

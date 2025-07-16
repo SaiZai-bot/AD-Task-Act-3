@@ -1,15 +1,12 @@
 <?php
-require_once __DIR__ . '/../../bootstrap.php';
+require_once BASE_PATH . '/bootstrap.php';
 
 require_once COMPONENT_PATH . '/templates/header.component.php';
 require_once COMPONENT_PATH . '/templates/nav.component.php';
 require_once COMPONENT_PATH . '/templates/footer.component.php';
-require_once UTILS_PATH . '/db.util.php';
+require_once UTILS_PATH . '/dbbridge.util.php';
 
-$pdo = connectToPostgres();
-
-$stmt = $pdo->query("SELECT * FROM meeting ORDER BY created_at DESC");
-$meetings = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$meetings = getAllMeetings();
 
 head();
 nav();

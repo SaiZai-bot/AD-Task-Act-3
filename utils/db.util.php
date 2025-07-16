@@ -1,4 +1,5 @@
 <?php
+//connect to database
 function connectToPostgres(): PDO {
     $pg = [
         'host'     => $_ENV['POSTGRES_HOST'] ?? '',
